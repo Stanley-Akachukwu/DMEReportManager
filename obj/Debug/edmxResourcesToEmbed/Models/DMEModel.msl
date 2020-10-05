@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DMEModelStoreContainer" CdmEntityContainer="DMEEntities">
+    <EntitySetMapping Name="ReportInsRegLimitValues">
+      <EntityTypeMapping TypeName="DMEModel.ReportInsRegLimitValue">
+        <MappingFragment StoreEntitySet="ReportInsRegLimitValue">
+          <ScalarProperty Name="InstrumentEid" ColumnName="InstrumentEid" />
+          <ScalarProperty Name="ReportInsRegLimitValueScdStartDate" ColumnName="ReportInsRegLimitValueScdStartDate" />
+          <ScalarProperty Name="ReportInsRegLimitValueScdEndDate" ColumnName="ReportInsRegLimitValueScdEndDate" />
+          <ScalarProperty Name="ReportInsRegLimitValueScdCurrentIndicator" ColumnName="ReportInsRegLimitValueScdCurrentIndicator" />
+          <ScalarProperty Name="InstrumentPreClearedIndicator" ColumnName="InstrumentPreClearedIndicator" />
+          <ScalarProperty Name="InsRegLimitPercentage" ColumnName="InsRegLimitPercentage" />
+          <ScalarProperty Name="NoteText" ColumnName="NoteText" />
+          <ScalarProperty Name="InputIdContextTypeCode" ColumnName="InputIdContextTypeCode" />
+          <ScalarProperty Name="InputInstrumentId" ColumnName="InputInstrumentId" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          <ScalarProperty Name="LastUpdatedDateTime" ColumnName="LastUpdatedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

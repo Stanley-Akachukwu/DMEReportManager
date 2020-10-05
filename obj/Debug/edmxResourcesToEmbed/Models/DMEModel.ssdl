@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DMEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ReportInsRegLimitValue">
+    <Key>
+      <PropertyRef Name="InstrumentEid" />
+      <PropertyRef Name="ReportInsRegLimitValueScdStartDate" />
+      <PropertyRef Name="ReportInsRegLimitValueScdCurrentIndicator" />
+      <PropertyRef Name="InputInstrumentId" />
+    </Key>
+    <Property Name="InstrumentEid" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReportInsRegLimitValueScdStartDate" Type="datetime" Nullable="false" />
+    <Property Name="ReportInsRegLimitValueScdEndDate" Type="datetime" Nullable="false" />
+    <Property Name="ReportInsRegLimitValueScdCurrentIndicator" Type="bit" Nullable="false" />
+    <Property Name="InstrumentPreClearedIndicator" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="InsRegLimitPercentage" Type="decimal" Precision="18" Scale="12" Nullable="false" />
+    <Property Name="NoteText" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="InputIdContextTypeCode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="InputInstrumentId" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="LastUpdatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DMEModelStoreContainer">
+    <EntitySet Name="ReportInsRegLimitValue" EntityType="Self.ReportInsRegLimitValue" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,107 @@
+﻿@model DMEWebApp.Models.ReportInsRegLimitValue
+
+@{
+    ViewBag.Title = "AddOrEdit";
+    Layout = "";
+}
+
+
+@using (Html.BeginForm("AddOrEdit", "LimitValueReport", FormMethod.Post, new {onSubmit= "return postReport(this);", data_restUrl=Url.Action("AddOrEdit", "LimitValueReport", new { id=0}) }))
+{
+<div class="row">
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.InstrumentEid)
+       
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Report Ins.Reg. LimitValue StartDate</label>
+                <div>
+
+                    @Html.TextBoxFor(model => model.ReportInsRegLimitValueScdStartDate, "{0:MM/dd/yy}", new { @class = "date-picker form-control" })
+                    @Html.ValidationMessageFor(model => model.ReportInsRegLimitValueScdStartDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Report Ins.Reg. LimitValue EndDate</label>
+                <div>
+                    @Html.TextBoxFor(model => model.ReportInsRegLimitValueScdEndDate, "{0:MM/dd/yy}", new { @class = "date-picker form-control" })
+                    @*@Html.EditorFor(model => model.ReportInsRegLimitValueScdEndDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.ValidationMessageFor(model => model.ReportInsRegLimitValueScdEndDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    @Html.EditorFor(model => model.InstrumentPreClearedIndicator, new { htmlAttributes = new { @class = "form-control", placeholder = "Pre-Cleared Indicator",maxlength = "1" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentPreClearedIndicator, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Report Ins Reg Limit Value Current Indicator</label>
+                <div>
+                    @Html.EditorFor(model => model.ReportInsRegLimitValueScdCurrentIndicator, new { htmlAttributes = new { @class = "form-control", placeholder = "Report Ins. Reg. LimitValue  Current Indicator" } })
+                    @Html.ValidationMessageFor(model => model.ReportInsRegLimitValueScdCurrentIndicator, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+
+            <div class="form-group">
+                <div>
+                    @Html.EditorFor(model => model.NoteText, new { htmlAttributes = new { @class = "form-control", placeholder = "NoteText", maxlength = "100" } })
+                    @Html.ValidationMessageFor(model => model.NoteText, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    @Html.EditorFor(model => model.InstrumentEid, new { htmlAttributes = new { @class = "form-control", placeholder = "InstrumentE ID", maxlength = "100" } })
+                    @Html.ValidationMessageFor(model => model.InstrumentEid, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    @Html.EditorFor(model => model.InputIdContextTypeCode, new { htmlAttributes = new { @class = "form-control", placeholder = "Input ID Context TypeCode", maxlength = "20" } })
+                    @Html.ValidationMessageFor(model => model.InputIdContextTypeCode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @Html.HiddenFor(model => model.LastUpdatedBy)
+
+            <div class="form-group">
+                <div>
+                    @Html.EditorFor(model => model.InputInstrumentId, new { htmlAttributes = new { @class = "form-control", placeholder = "Input Instrument ID", maxlength = "15" } })
+                    @Html.ValidationMessageFor(model => model.InputInstrumentId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Last Updated Time</label>
+                <div>
+                    @Html.EditorFor(model => model.LastUpdatedDateTime, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.LastUpdatedDateTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ins. Reg. Limit Percentage</label>
+                <div>
+                    @Html.EditorFor(model => model.InsRegLimitPercentage, new { htmlAttributes = new { @class = "form-control", placeholder = "Ins. Reg. Limit Percentage" } })
+                    @Html.ValidationMessageFor(model => model.InsRegLimitPercentage, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+ 
+

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DMEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ReportInsRegLimitValue">
+    <Key>
+      <PropertyRef Name="InstrumentEid" />
+      <PropertyRef Name="ReportInsRegLimitValueScdStartDate" />
+      <PropertyRef Name="ReportInsRegLimitValueScdCurrentIndicator" />
+      <PropertyRef Name="InputInstrumentId" />
+    </Key>
+    <Property Name="InstrumentEid" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReportInsRegLimitValueScdStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReportInsRegLimitValueScdEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReportInsRegLimitValueScdCurrentIndicator" Type="Boolean" Nullable="false" />
+    <Property Name="InstrumentPreClearedIndicator" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InsRegLimitPercentage" Type="Decimal" Precision="18" Scale="12" Nullable="false" />
+    <Property Name="NoteText" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InputIdContextTypeCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="InputInstrumentId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastUpdatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="DMEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ReportInsRegLimitValues" EntityType="Self.ReportInsRegLimitValue" />
+  </EntityContainer>
+</Schema>

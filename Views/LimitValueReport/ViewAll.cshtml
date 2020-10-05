@@ -1,0 +1,71 @@
+﻿ 
+
+@model IEnumerable<DMEWebApp.Models.ReportInsRegLimitValue>
+@{
+    ViewBag.Title = "ViewAll";
+    Layout = null;
+}
+<table class="table table-striped table-condensed" id="limitvalueTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportInsRegLimitValueScdEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InstrumentPreClearedIndicator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsRegLimitPercentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InputIdContextTypeCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdatedDateTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReportInsRegLimitValueScdEndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InstrumentPreClearedIndicator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InsRegLimitPercentage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InputIdContextTypeCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastUpdatedDateTime)
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" onclick="Edit('@Url.Action("AddOrEdit", "LimitValueReport", new { id=@item.InstrumentEid})')"><i class="fa fa-pencil fa-lg"></i></a>
+                    
+                     @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                      @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                      @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
